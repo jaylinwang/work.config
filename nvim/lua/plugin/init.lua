@@ -1,5 +1,5 @@
-return require('packer').startup(function(use)
-  -- 插件管理
+return require('packer').startup(function()
+   -- 插件管理
   use 'wbthomason/packer.nvim'
 
   -- 基础依赖
@@ -7,7 +7,9 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
 
   -- ui 配置
-  use 'navarasu/onedark.nvim'
+  -- use 'navarasu/onedark.nvim'
+  use 'glepnir/dashboard-nvim'
+  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -24,8 +26,7 @@ return require('packer').startup(function(use)
   }
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
+    requires = 'kyazdani42/nvim-web-devicons'
   }
 
   -- 补全
@@ -44,4 +45,5 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
 
   use 'windwp/nvim-autopairs'
+use 'dstein64/vim-startuptime'
 end)

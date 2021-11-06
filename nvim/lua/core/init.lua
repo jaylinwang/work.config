@@ -40,7 +40,8 @@ end
 
 local load_core = function()
   leader_map();
-  require('core.option')
+  require('plugin')
+  require('config')
   require('keymap')
   require('telescope').setup {
     defaults = {
@@ -101,7 +102,7 @@ local load_core = function()
 	    height = 30,
 	    hide_root_folder = false,
 	    side = 'left',
-	    auto_resize = true,
+	    auto_resize = false,
 	    mappings = {
 	      custom_only = false,
 	      list = {}
@@ -109,7 +110,9 @@ local load_core = function()
 	  }
 	}
 
-	require('onedark').setup()
+	-- require('onedark').setup()
+  vim.o.background = "dark" -- or "light" for light mode
+  vim.cmd([[colorscheme gruvbox]])
 
   -- Add additional capabilities supported by nvim-cmp
   local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -1,14 +1,5 @@
-local global = require('core.global')
-
-local function bind_option(options)
-  for k, v in pairs(options) do
-    if v == true or v == false then
-      vim.cmd('set ' .. k)
-    else
-      vim.cmd('set ' .. k .. '=' .. v)
-    end
-  end
-end
+local global = require('global')
+local cbind = require('config.bind');
 
 local function load_options()
   local global_local = {
@@ -126,10 +117,9 @@ local function load_options()
     vim.g.python_host_prog = '/usr/bin/python'
     vim.g.python3_host_prog = '/usr/local/bin/python3'
   end
-  for name, value in pairs(global_local) do
-    vim.o[name] = value
-  end
-  bind_option(bw_local)
+  cbind.bind_g(global_local)
+  cbind.bind_set(bw_local)
 end
 
 load_options()
+
