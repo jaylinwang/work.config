@@ -4,7 +4,10 @@ return require('packer').startup(function()
 
   -- UI 配置
   -- use 'navarasu/onedark.nvim'
-  use 'glepnir/dashboard-nvim'
+  use {
+    'glepnir/dashboard-nvim',
+    config = require('plugin.dashboard')
+  }
   use {
     'ellisonleao/gruvbox.nvim', 
     requires = {'rktjmp/lush.nvim'}, 
