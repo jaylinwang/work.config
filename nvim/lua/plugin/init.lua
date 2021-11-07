@@ -2,42 +2,85 @@ return require('packer').startup(function()
    -- 插件管理
   use 'wbthomason/packer.nvim'
 
-  -- 基础依赖
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-
-  -- ui 配置
+  -- UI 配置
   -- use 'navarasu/onedark.nvim'
   use 'glepnir/dashboard-nvim'
-  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  use {
+    'ellisonleao/gruvbox.nvim', 
+    requires = {'rktjmp/lush.nvim'}, 
+    config = require('plugin.gruvbox')
+  }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = require('plugin.lualine')
   }
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {
+    'akinsho/bufferline.nvim', 
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup{}
+    end
+  }
   -- 编辑器快捷操作
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { 
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-lua/popup.nvim'}
+    },
+    config = require('plugin.telescope')
+  }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim', 
+    config = function()
+      require('telescope').load_extension('fzf')
+    end,
+    run = 'make' 
+  }
+  use {
+    'nvim-telescope/telescope-frecency.nvim',
+    config = function()
+      require'telescope'.load_extension('frecency')
+    end,
+    requires = {'tami5/sqlite.lua'}
   }
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = require('plugin.nvim-tree')
   }
 
   -- 补全
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-cmp'
+  use {
+    'neovim/nvim-lspconfig',
+    config=require('plugin.lsp')
+  }
+  use {
+    'glepnir/lspsaga.nvim',
+    config = require('plugin.lspsaga')
+  }
+  use {
+    'hrsh7th/nvim-cmp',
+    config = require('plugin.cmp')
+  }
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/vim-vsnip'
 
-  -- format
+   -- format
   use 'prettier/vim-prettier'
+
+  -- 编辑器基础能力
+  use {'editorconfig/editorconfig-vim'}
+
 
   -- 原有的一些 vim 插件
   use 'mg979/vim-visual-multi'
@@ -45,5 +88,6 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
 
   use 'windwp/nvim-autopairs'
-use 'dstein64/vim-startuptime'
+  use 'dstein64/vim-startuptime'
+
 end)
