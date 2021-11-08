@@ -63,10 +63,10 @@ return require('packer').startup(function()
     'neovim/nvim-lspconfig',
     config=require('plugin.lsp')
   }
-  use {
-    'glepnir/lspsaga.nvim',
-    config = require('plugin.lspsaga')
-  }
+  -- use {
+  --   'glepnir/lspsaga.nvim',
+  --   config = require('plugin.lspsaga')
+  -- }
   use {
     'hrsh7th/nvim-cmp',
     config = require('plugin.cmp')
