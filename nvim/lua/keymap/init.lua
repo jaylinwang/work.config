@@ -19,22 +19,6 @@ local plugin_map = {
   ["n|<Leader>fl"]     = map_cr('Telescope loclist'):with_noremap():with_silent(),
   ["n|<Leader>fc"]     = map_cr('Telescope git_commits'):with_noremap():with_silent(),
   
-  -- Plugin lspsaga
-  -- ["n|gh"]             = map_cr('Lspsaga lsp_finder'):with_noremap():with_silent(),
-  -- ["n|gd"]             = map_cr('Lspsaga preview_definition'):with_noremap():with_silent(),
-  -- ["n|<Leader>ca"]     = map_cr('Lspsaga code_action'):with_noremap():with_silent(),
-  -- ["v|<Leader>ca"]     = map_cr('<C-U>Lspsaga range_code_action'):with_noremap():with_silent(),
-  -- ["n|<Leader>ch"]     = map_cr('Lspsaga hover_doc'):with_noremap():with_silent(),
-  -- ["n|<Leader>cr"]     = map_cr('Lspsaga rename'):with_noremap():with_silent(),
-  -- ["n|<Leader>cc"]     = map_cmd('<cmd>lua require("lspsaga.diagnostic").show_cursor_diagnostics()<CR>'):with_noremap():with_silent(),
-  -- ["n|<Leader>cd"]     = map_cr('Lspsaga show_line_diagnostics'):with_noremap():with_silent(),
-  -- ["n|[e"]             = map_cr('Lspsaga diagnostic_jump_next'):with_noremap():with_silent(),
-  -- ["n|]e"]             = map_cr('Lspsaga diagnostic_jump_prev'):with_noremap():with_silent(),
-
-  -- -- Plugin bufferline
-  -- ["n|<Leader>bb"]     = map_cr('BufferLinePick'):with_noremap():with_silent(),
-  -- ["n|<Leader>bc"]     = map_cr('BufferLinePickClose'):with_noremap():with_silent(),
-
 }
 
 bind.nvim_load_mapping(plugin_map)
