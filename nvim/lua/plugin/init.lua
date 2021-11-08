@@ -90,7 +90,10 @@ return require('packer').startup(function()
   use 'terryma/vim-expand-region'
   use 'tpope/vim-commentary'
 
-  use 'windwp/nvim-autopairs'
+  use {
+    'windwp/nvim-autopairs',
+    config = require('plugin.autopair')
+  }
   use 'dstein64/vim-startuptime'
 
 end)

@@ -46,12 +46,14 @@ return function()
       }
     }
   }
-  
+  vim.g.nvim_tree_show_icons = {
+    folder_arrows = 0
+  }
   vim.g.nvim_tree_icons = {
     default =  '',
     symlink =  '',
     folder = {
-      arrow_open = "",
+      arrow_open = "",
       arrow_closed = "",
       default = "",
       open = "",
