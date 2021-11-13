@@ -15,6 +15,7 @@ return require('packer').startup(function()
   }
   use {
     'nvim-treesitter/nvim-treesitter',
+    config = require('plugin.treesitter'),
     run = ':TSUpdate'
   }
   use {
@@ -79,7 +80,8 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
 
    -- format
-  use 'prettier/vim-prettier'
+  -- use 'prettier/vim-prettier'
+  use 'sbdchd/neoformat'
 
   -- 编辑器基础能力
   use {'editorconfig/editorconfig-vim'}
@@ -95,5 +97,6 @@ return require('packer').startup(function()
     config = require('plugin.autopair')
   }
   use 'dstein64/vim-startuptime'
+  use 'easymotion/vim-easymotion'
 
 end)
