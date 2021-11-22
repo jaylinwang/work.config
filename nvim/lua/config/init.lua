@@ -100,6 +100,7 @@ local function load_options()
     signcolumn     = "yes";
     conceallevel   = 0;
     concealcursor  = "niv";
+    cursorline     = true;
   }
 
   if global.is_mac then
