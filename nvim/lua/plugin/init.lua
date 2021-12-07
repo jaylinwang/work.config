@@ -79,9 +79,12 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/vim-vsnip'
 
-   -- format
+  -- format
   -- use 'prettier/vim-prettier'
-  use 'sbdchd/neoformat'
+  use {
+    'sbdchd/neoformat',
+    config = require('plugin.formatter')
+  }
 
   -- 编辑器基础能力
   use {'editorconfig/editorconfig-vim'}

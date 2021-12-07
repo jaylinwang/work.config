@@ -10,6 +10,7 @@ local load_core = function()
   require('config')
   require('keymap')
 
+
   require'nvim-treesitter.configs'.setup {
     highlight = {
       enable = true,
