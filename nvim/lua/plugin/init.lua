@@ -8,10 +8,14 @@ return require('packer').startup(function()
     'glepnir/dashboard-nvim',
     config = require('plugin.dashboard')
   }
+  -- use {
+  --   'ellisonleao/gruvbox.nvim', 
+  --   requires = {'rktjmp/lush.nvim'}, 
+  --   config = require('plugin.gruvbox')
+  -- }
   use {
-    'ellisonleao/gruvbox.nvim', 
-    requires = {'rktjmp/lush.nvim'}, 
-    config = require('plugin.gruvbox')
+    'navarasu/onedark.nvim',
+    config = require('plugin.onedark')
   }
   use {
     'nvim-treesitter/nvim-treesitter',

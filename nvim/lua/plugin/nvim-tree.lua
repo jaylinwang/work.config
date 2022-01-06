@@ -53,8 +53,8 @@ return function()
     default =  '',
     symlink =  '',
     folder = {
-      arrow_open = "",
-      arrow_closed = "",
+      arrow_open = "",
+      arrow_closed = "",
       default = "",
       open = "",
       empty = "",

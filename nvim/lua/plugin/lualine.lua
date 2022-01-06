@@ -1,5 +1,5 @@
 return function()
   require('lualine').setup {
-    theme = 'gruvbox'
+    theme = 'onedark'
   }
 end
