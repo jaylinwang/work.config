@@ -9,17 +9,18 @@ local load_core = function()
   require('plugin')
   require('config')
   require('keymap')
+  require('onedark').load()
 
 
-  require'nvim-treesitter.configs'.setup {
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false,
-    },
-    indent = {
-      enable = true
-    }
-  }
+  -- require'nvim-treesitter.configs'.setup {
+  --   highlight = {
+  --     enable = true,
+  --     additional_vim_regex_highlighting = false,
+  --   },
+  --   indent = {
+  --     enable = true
+  --   }
+  -- }
 end
 
 load_core()

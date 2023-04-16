@@ -3,10 +3,10 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- UI 配置
-  -- use 'navarasu/onedark.nvim'
   use {
     'glepnir/dashboard-nvim',
-    config = require('plugin.dashboard')
+    config = require('plugin.dashboard'),
+    requires = {'nvim-tree/nvim-web-devicons'}
   }
   -- use {
   --   'ellisonleao/gruvbox.nvim', 
@@ -24,12 +24,13 @@ return require('packer').startup(function()
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    requires = {'nvim-tree/nvim-web-devicons'},
     config = require('plugin.lualine')
   }
   use {
     'akinsho/bufferline.nvim', 
-    requires = 'kyazdani42/nvim-web-devicons',
+    tag = 'v2.*',
+    requires = {'nvim-tree/nvim-web-devicons'},
     config = function()
       require("bufferline").setup{}
     end
@@ -39,7 +40,6 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { 
       {'nvim-lua/plenary.nvim'},
-      {'nvim-lua/popup.nvim'}
     },
     config = require('plugin.telescope')
   }
@@ -59,7 +59,7 @@ return require('packer').startup(function()
   }
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = {'nvim-tree/nvim-web-devicons'},
     config = require('plugin.nvim-tree')
   }
 
@@ -79,8 +79,8 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
   -- format
